@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InformationPage">
+
+    <ProgressBar
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        />
+
+    <TextView
+        android:id="@+id/txtview01"
+        android:layout_width="350dp"
+        android:layout_height="42dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:autoLink="all"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/txtview05"
+        android:layout_width="350dp"
+        android:layout_height="42dp"
+        android:layout_below="@+id/txtview04"
+        android:layout_centerHorizontal="true"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/txtview04"
+        android:layout_width="350dp"
+        android:layout_height="42dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="153dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/txtview02"
+        android:layout_width="350dp"
+        android:layout_height="42dp"
+        android:layout_below="@+id/txtview01"
+        android:layout_centerHorizontal="true"
+        android:autoLink="web"
+        android:text="TextView" />
+
+
+
+    <TextView
+        android:id="@+id/txtview03"
+        android:layout_width="350dp"
+        android:layout_height="42dp"
+        android:layout_below="@+id/txtview02"
+        android:layout_centerHorizontal="true"
+        android:text="TextView" />
+
+    <com.motheriloveyou.mobarakbutterfly.firestore.TouchImageView
+        android:id="@+id/image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+         />
+
+
+</RelativeLayout>

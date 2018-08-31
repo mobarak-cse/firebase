@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "98266955899",
+    "firebase_url": "https://firestore-657fc.firebaseio.com",
+    "project_id": "firestore-657fc",
+    "storage_bucket": "firestore-657fc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:98266955899:android:23f16d312dc7ef71",
+        "android_client_info": {
+          "package_name": "com.motheriloveyou.mobarakbutterfly.firestore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "98266955899-hot7vm9lh553nl2i2abvibl3u5qoucth.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.motheriloveyou.mobarakbutterfly.firestore",
+            "certificate_hash": "c93df2573bc66029497f9263f30134995c33b7e6"
+          }
+        },
+        {
+          "client_id": "98266955899-njf1g8hijupslcqqmnqmk26v10on530q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRxn4fqUb29sZvWVxmHVKNV5wEGl8Vj2w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "98266955899-njf1g8hijupslcqqmnqmk26v10on530q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
