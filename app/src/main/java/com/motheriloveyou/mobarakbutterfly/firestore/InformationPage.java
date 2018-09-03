@@ -1,17 +1,26 @@
 package com.motheriloveyou.mobarakbutterfly.firestore;
 
+import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.MediaController;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
@@ -19,6 +28,7 @@ import com.squareup.picasso.Picasso;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import android.widget.MediaController;
 
 public class InformationPage extends AppCompatActivity {
 
@@ -29,6 +39,12 @@ public class InformationPage extends AppCompatActivity {
     private Product product;
 
     private ProgressBar progressBar;
+    ProgressDialog pd;
+    VideoView view;
+    InterstitialAd mInterstitialAd;
+    private InterstitialAd interstitial;
+
+
 
 
 
@@ -46,9 +62,10 @@ public class InformationPage extends AppCompatActivity {
         viewtextid04 = findViewById(R.id.txtview04);
         viewtextid05 = findViewById(R.id.txtview05);
 
+        final VideoView view = findViewById(R.id.videoView1);
+
         progressBar = findViewById(R.id.progressbar);
 
-        ImageView imageView = findViewById(R.id.image_view);
 
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -61,23 +78,38 @@ public class InformationPage extends AppCompatActivity {
         viewtextid04.setText(String.valueOf(product.getPrice()));
         viewtextid05.setText(String.valueOf(product.getQty()));
 
+        String URL = product.getName();
 
-        Picasso.get().load(product.getName()).into(imageView, new Callback() {
-            @Override
-            public void onSuccess() {
-                progressBar.setVisibility(View.GONE);
-            }
 
-            @Override
-            public void onError(Exception e) {
+        pd = new ProgressDialog(InformationPage.this);
+        pd.setTitle("Video Streamming Demo");
+        pd.setMessage("Buffering...");
+        pd.setIndeterminate(false);
+        pd.setCancelable(false);
+        pd.show();
 
+        try{
+
+            MediaController controller = new MediaController(InformationPage.this);
+            controller.setAnchorView(view);
+            Uri vid = Uri.parse(URL);
+            view.setMediaController(controller);
+            view.setVideoURI(vid);
+        }catch(Exception e){
+            Log.e("Error", e.getMessage());
+            e.printStackTrace();
+        }
+        view.requestFocus();
+        view.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            public void onPrepared(MediaPlayer mp) {
+// TODO Auto-generated method stub
+                pd.dismiss();
+                view.start();
             }
         });
 
 
     }
-
-
 
 
 }

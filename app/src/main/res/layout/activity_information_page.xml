@@ -61,13 +61,12 @@
         android:layout_centerHorizontal="true"
         android:text="TextView" />
 
-    <com.motheriloveyou.mobarakbutterfly.firestore.TouchImageView
-        android:id="@+id/image_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-         />
+    <VideoView
+        android:id="@+id/videoView1"
+        android:layout_width="match_parent"
+        android:layout_height="263dp"
+
+        android:layout_centerVertical="true" />
 
 
 </RelativeLayout>
